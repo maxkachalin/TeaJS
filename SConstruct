@@ -16,7 +16,7 @@ def build_v8_native(env):
 		CFLAGS+=" -fvisibility=default"
 		GYP_LIBTOOLFLAGS+=" -sc"
 	v8 = env.Command(v8_path, "",
-	 "make CFLAGS='" + CFLAGS + "' CXXFLAGS='" + CFLAGS + "' LDFLAGS='" + LDFLAGS + "' CC=" + env["CC"] + " CXX=" + env["CXX"] + " LINK=" + env["CXX"] +" GYP_LIBTOOLFLAGS='" + GYP_LIBTOOLFLAGS + "' -C "+ v8_path +" component=static_library " + I18N + " native")
+	 "make CFLAGS='" + CFLAGS + "' CXXFLAGS='" + CFLAGS + "' LDFLAGS='" + LDFLAGS + "' CC=" + env["CC"] + " CXX=" + env["CXX"] + " LINK=" + env["CXX"] +" GYP_LIBTOOLFLAGS='" + GYP_LIBTOOLFLAGS + "' -C "+ v8_path +" component=static_library " + I18N + " native" + " werror=no")
 	env.AlwaysBuild(v8)
 #def
 
